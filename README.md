@@ -6,6 +6,6 @@
 
 
 
-##REST API Endpoint
-/all - GET: return all people
+## REST API Endpoint
+/all - GET: return all people /n
 /add - POST: add a new person to document
