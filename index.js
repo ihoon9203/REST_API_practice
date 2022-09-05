@@ -1,10 +1,20 @@
 const express = require('express')
+const mongoose = require('mongoose');
 const mongo = require("mongodb").MongoClient;
 const app = express()
 
 const url = 'mongodb+srv://admin:pmvXGKaoInJ0UFgw@testercluster.jepemrd.mongodb.net/test?retryWrites=true&w=majority'
+mongoose.connect(url);
 
-let db, people
+const db = mongoose.connection
+const collection = db.collection("people", function(err, collection){
+    collection.find({}).toArray(function(err, data){
+        console.log(data); // it will print your collection data
+    })
+})
+
+
+let people
 mongo.connect(
     url,
     {
@@ -47,6 +57,11 @@ app.get("/all", (req, res) => {
           }
           res.status(200).json({ people: items })
     })
+})
+
+app.delete("/delete", (req, res) => {
+    console.log("deleting...")
+    people.deleteOne({})
 })
 
   const PORT = 3001
