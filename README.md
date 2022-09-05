@@ -7,6 +7,43 @@
 
 
 ## REST API Endpoint
-/all - GET: return all people
+### GET
+/all: return all people
+### POST
+/add: add a new person to document
 
-/add - POST: add a new person to document
+## Document Example
+{
+    "people": [
+        {
+            "_id": "63159bad5ce4164285e5f129",
+            "id": 1,
+            "name": "James Bond",
+            "number": "21345"
+        },
+        {
+            "_id": "63159bad5ce4164285e5f12a",
+            "id": 2,
+            "name": "Benedict Cumberbatch",
+            "number": "42312454"
+        },
+        {
+            "_id": "63159ce42b0a297a8516d31e",
+            "name": "Conan Doyle",
+            "number": "412345656",
+            "id": 44
+        },
+        {
+            "_id": "63159d022b0a297a8516d31f",
+            "name": "Jane Doe",
+            "number": "6868854",
+            "id": 42
+        },
+        {
+            "_id": "63159d522b0a297a8516d320",
+            "name": "John Doe",
+            "number": "682222",
+            "id": 38
+        }
+    ]
+}
