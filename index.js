@@ -48,8 +48,10 @@ app.get("/all", (req, res) => {
           res.status(200).json({ people: items })
     })
 })
-
-  const PORT = 3001
-  app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`)
-  })
+app.delete("/delete", (req, res) => {
+    people.deleteOne({name: "John"})
+})
+const PORT = 3001
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`)
+})
