@@ -7,5 +7,6 @@
 
 
 ## REST API Endpoint
-/all - GET: return all people /n
+/all - GET: return all people
+
 /add - POST: add a new person to document
